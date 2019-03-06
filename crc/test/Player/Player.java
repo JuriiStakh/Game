@@ -1,9 +1,8 @@
-package src.test.Player;
-import java.util.Scanner;
+package crc.test.Player;
 
 public class Player {
 
-String name;
+public String name;
 
 int number;
 
@@ -21,12 +20,11 @@ this.name = name;
 
 }
 
-public int makeAChoiсe (){
+public int makeAChoice() {
 
-Scanner scan = new Scanner(System.in);
+number = (int) (Math.random() * 3 );
 
-this.number = (int) (Math.random() * 3 );
-
+return number;
 }
 
 }

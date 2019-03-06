@@ -1,4 +1,6 @@
-package crc.test.Game;import crc.test.Player.Player;
+package crc.test.Game;
+
+import crc.test.Player.Player;
 
 public class Game{
 
@@ -10,21 +12,15 @@ public Player secondPlayer;
 
 Game game = new Game();
 
-public static void printTitleOfGame (){
-
-System.out.println(Game.titleOfGame);
-
-}
-
 public void playGame(){
 
-System.out.println("Hi, game " + printTitleOfGame + " begin");
+System.out.println("Hi, game " + titleOfGame + " begin");
 
 firstPlayer = Player.getPlayer();
 
 firstPlayer.setName("Первый игрок");
 
-int firstNum = firstPlayer.makeAChoice();
+int firstNum = game.getNumberOfPlayer(firstPlayer);;
 
 String first = game.playerSelection(firstNum);
 
@@ -32,7 +28,7 @@ secondPlayer = Player.getPlayer();
 
 secondPlayer.setName("Второй игрок");
 
-int secondNum = secondPlayer.makeAChoice();
+int secondNum = game.getNumberOfPlayer(secondPlayer);
 
 String second = game.playerSelection(secondNum);
 
@@ -40,7 +36,9 @@ System.out.println("Первый игрок поставил " + first);
 
 System.out.println("Второй игрок поставил " + second);
 
-System.out.println("Сейчас мы узнаем имя победителя " + game.winner);
+System.out.println("Сейчас мы узнаем имя победителя ");
+
+game.winner(first,second);
 
 }
 
