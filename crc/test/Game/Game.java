@@ -6,31 +6,25 @@ public class Game{
 
 public static String titleOfGame = "Rock, Paper, Scissors";
 
-public Player firstPlayer;
+public Player firstPlayer = Player.getPlayer();
 
-public Player secondPlayer;
-
-Game game = new Game();
+public Player secondPlayer = Player.getPlayer();
 
 public void playGame(){
 
 System.out.println("Hi, game " + titleOfGame + " begin");
 
-firstPlayer = Player.getPlayer();
-
 firstPlayer.setName("Первый игрок");
 
-int firstNum = game.getNumberOfPlayer(firstPlayer);;
+int firstNum = this.getNumberOfPlayer(firstPlayer);
 
-String first = game.playerSelection(firstNum);
-
-secondPlayer = Player.getPlayer();
+String first = this.playerSelection(firstNum);
 
 secondPlayer.setName("Второй игрок");
 
-int secondNum = game.getNumberOfPlayer(secondPlayer);
+int secondNum = this.getNumberOfPlayer(secondPlayer);
 
-String second = game.playerSelection(secondNum);
+String second = this.playerSelection(secondNum);
 
 System.out.println("Первый игрок поставил " + first);
 
@@ -38,7 +32,7 @@ System.out.println("Второй игрок поставил " + second);
 
 System.out.println("Сейчас мы узнаем имя победителя ");
 
-game.winner(first,second);
+this.winner(first,second);
 
 }
 
@@ -66,7 +60,7 @@ System.out.println("Победил " + firstPlayer.name);
 System.out.println("Победил " + secondPlayer.name);
 }else{
 System.out.println("Ничья, нужно сыграть еще раз");
-game.playGame();
+this.playGame();
 }
 
 }
